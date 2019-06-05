@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="game1">
+	<h1 style="">ОЧКИ</h1>
+	<h1 class="score">100</h1>
+
+		<div class="img1"  style="background-image: url(img/Antilop.jpg); height: 200px; width: 300px; background-size: 100% 100%; position: absolute; margin-left: 500px;"></div>
+		<div class="img2"  style="background-image: url(img/begemot.jpg); height: 200px; width: 300px; background-size: 100% 100%; position: absolute; margin-left: 400px; margin-top: 300px;"></div>
+		<div class="img3" style="background-image: url(img/elephant.jpg); height: 200px; width: 300px; background-size: 100% 100%;  position: absolute; margin-left: 1000px; margin-top: 600px;"></div>
+		<div class="img4"  style="background-image: url(img/giena.jpg); height: 200px; width: 300px; background-size: 100% 100%; position: absolute; margin-left: 800px; margin-top: 350px;">
+		</div>
+		<div class="img5"  style="background-image: url(img/jiraf.jpg); height: 200px; width: 300px; background-size: 100% 100%; position: absolute; margin-left: 1000px;"></div>
+		<div class="img6"  style="background-image: url(img/korova.jpg); height: 200px; width: 300px; background-size: 100% 100%; position: absolute; margin-top: 400px;"></div>
+		<div class="img7" style="background-image: url(img/lion.jpg); height: 200px; width: 300px; background-size: 100% 100%; position: absolute;  margin-left: 1200px; margin-top: 300px;">
+		</div>
+		<div class="img8"  style="background-image: url(img/nosorog.jpg); height: 200px; width: 300px; background-size: 100% 100%; position: absolute; margin-top: 650px; margin-left: 400px;"></div>
+		<div class="img9" style="background-image: url(img/zebra.jpg); height: 200px; width: 300px; background-size: 100% 100%; position: absolute; margin-top: 50px;"></div>
+
+
+	<div style="display: none;" class="question">
+		<h2 style="">Где спрятана hyena?</h2>
+	</div> 
+</div>
+<div class="game2" style="display: none">
+	<h1>Очки</h1>
+	<h1 class="score">100</h1>
+	<h1 class="question1" style="display: none">Где была цифра 110101?</h1>
+		<div class="num1 col-3"><h1 style="color: black;">110111</h1></div>
+		<div class="num2 col-3 mt-4"><h1 style="color: black;">101011</h1></div>
+		<div class="num3 col-3 mt-4"><h1 style="color: black;">100101</h1></div>
+		<div class="num4 col-3 mt-4"><h1 style="color: black;">111111</h1></div>
+		<div class="num5 col-3 mt-4"><h1 style="color: black;">110101</h1></div>
+		<div class="num6 col-3 mt-4"><h1 style="color: black;">101101</h1></div>
+</div>
+<script>
+	let score = 100;
+	let change = function(){
+		document.querySelector(".img1").style.background = "black";
+		document.querySelector(".img2").style.background = "black";
+		document.querySelector(".img3").style.background = "black";
+		document.querySelector(".img4").style.background = "black";
+		document.querySelector(".img5").style.background = "black";
+		document.querySelector(".img6").style.background = "black";
+		document.querySelector(".img7").style.background = "black";
+		document.querySelector(".img8").style.background = "black";
+		document.querySelector(".img9").style.background = "black";
+		document.querySelector(".question").style.display = "block";
+	}
+	let change1 = function(){
+		document.querySelector(".num1").style.background = "black";
+		document.querySelector(".num2").style.background = "black";
+		document.querySelector(".num3").style.background = "black";
+		document.querySelector(".num4").style.background = "black";
+		document.querySelector(".num5").style.background = "black";
+		document.querySelector(".num6").style.background = "black";
+		document.querySelector(".question1").style.display = "block";
+	}
+		document.querySelector(".img1").onclick = function(){
+			document.querySelector(".img1").style.backgroundImage = "url(img/Antilop.jpg)";
+			document.querySelector(".img1").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+			
+		}
+		document.querySelector(".img2").onclick = function(){
+			document.querySelector(".img2").style.backgroundImage = "url(img/begemot.jpg)";
+			document.querySelector(".img2").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".img3").onclick = function(){
+			document.querySelector(".img3").style.backgroundImage = "url(img/elephant.jpg)";
+			document.querySelector(".img3").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".img4").onclick = function(){
+			document.querySelector(".img4").style.backgroundImage = "url(img/giena.jpg)";
+			document.querySelector(".img4").style.backgroundSize = "100% 100%";
+			score = score + 100
+			document.querySelector(".score").innerHTML = score;
+			alert("xorow!");
+			document.querySelector(".game1").style.display = "none";
+			document.querySelector(".game2").style.display = "block";
+			setTimeout(change1, 6000)
+		}
+		document.querySelector(".img5").onclick = function(){
+			document.querySelector(".img5").style.backgroundImage = "url(img/jiraf.jpg)";
+			document.querySelector(".img5").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".img6").onclick = function(){
+			document.querySelector(".img6").style.backgroundImage = "url(img/korova.jpg)";
+			document.querySelector(".img6").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".img7").onclick = function(){
+			document.querySelector(".img7").style.backgroundImage = "url(img/lion.jpg)";
+			document.querySelector(".img7").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".img8").onclick = function(){
+			document.querySelector(".img8").style.backgroundImage = "url(img/nosorog.jpg)";
+			document.querySelector(".img8").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".img9").onclick = function(){
+			document.querySelector(".img9").style.backgroundImage = "url(img/zebra.jpg)";
+			document.querySelector(".img9").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".num1").onclick = function(){
+			document.querySelector(".num1").style.background = "none";
+			document.querySelector(".num1").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".num2").onclick = function(){
+			document.querySelector(".num2").style.background = "none";
+			document.querySelector(".num2").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".num3").onclick = function(){
+			document.querySelector(".num3").style.background = "none";
+			document.querySelector(".num3").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".num4").onclick = function(){
+			document.querySelector(".num4").style.background = "none";
+			document.querySelector(".num4").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		document.querySelector(".num5").onclick = function(){
+			document.querySelector(".num5").style.background = "none";
+			document.querySelector(".num5").style.backgroundSize = "100% 100%";
+			score = score + 999
+			document.querySelector(".score").innerHTML = score;
+			alert("GJ!")
+		}
+		document.querySelector(".num6").onclick = function(){
+			document.querySelector(".num6").style.background = "none";
+			document.querySelector(".num6").style.backgroundSize = "100% 100%";
+			score = score - 10
+			document.querySelector(".score").innerHTML = score;
+			alert("wrong!")
+		}
+		setTimeout(change, 4000);
+</script>
+</body>
+</html>
